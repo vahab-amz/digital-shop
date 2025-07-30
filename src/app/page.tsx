@@ -3,11 +3,7 @@ export default function Home() {
 
   const render = () => {
     const name: string = 'Vahab';
-    return (
-      <span>
-        hi {name}
-      </span>
-    );
+    return <span>hi {name}</span>;
   };
 
   return (
