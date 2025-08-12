@@ -4,7 +4,7 @@ import { getProductById } from '../services';
 
 async function ProductDetailView(props: { id: string }) {
     const { id } = props;
-    const product = await getProductById(id)
+    const product = await getProductById(id);
     return (
         <div>
             <ProductForm product={product} />

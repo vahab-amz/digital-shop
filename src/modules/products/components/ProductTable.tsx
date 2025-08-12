@@ -23,7 +23,7 @@ function ProductTable(props: {
     const { products } = props;
 
     const onDeleteProduct = (id: string) => {
-      deleteProduct(id)
+        deleteProduct(id);
     };
 
     return (

@@ -17,7 +17,9 @@ function ProductItem(props: { product: any }) {
             <CardHeader>
                 <div className="w-full relative h-[300px]">
                     <Image
-                        src={product.images?.[0]?.image || '/assets/no-image.jpg'}
+                        src={
+                            product.images?.[0]?.image || '/assets/no-image.jpg'
+                        }
                         alt={product?.name}
                         fill
                         className="object-cover"
@@ -35,7 +37,10 @@ function ProductItem(props: { product: any }) {
                     </span>
                     <div className="flex gap-2 items-center">
                         <Heart color="red" className="cursor-pointer" />
-                        <Link href={`/products/catalog?id=${product?.id}`} className="">
+                        <Link
+                            href={`/products/catalog?id=${product?.id}`}
+                            className=""
+                        >
                             <GalleryThumbnails />
                         </Link>
                     </div>

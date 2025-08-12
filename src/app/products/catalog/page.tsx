@@ -4,14 +4,11 @@ import Link from 'next/link';
 import React from 'react';
 
 function Catalog() {
-
-	
-
     return (
-        <div className='flex flex-col items-center'>
+        <div className="flex flex-col items-center">
             <CatalogList />
-            <Button asChild className='mt-10'>
-              <Link href="/products">Back to products</Link>
+            <Button asChild className="mt-10">
+                <Link href="/products">Back to products</Link>
             </Button>
         </div>
     );

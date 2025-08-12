@@ -10,7 +10,7 @@ function ProductListView() {
 
     const getProductData = async () => {
         const result = await getProductsAPI();
-        setProducts(result?.data); 
+        setProducts(result?.data);
     };
 
     useEffect(() => {

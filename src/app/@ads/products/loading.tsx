@@ -1,6 +1,5 @@
-
 function loading() {
-  return null
+    return null;
 }
 
-export default loading
+export default loading;

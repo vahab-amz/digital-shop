@@ -6,7 +6,7 @@ import { CircleX } from 'lucide-react';
 import Image from 'next/image';
 import React, { FC, useEffect, useState } from 'react';
 import { deleteImage, FetchImages, uploadImages } from '../services/image';
-import Spinner from '@/components/Spinner'
+import Spinner from '@/components/Spinner';
 
 const UploadImage: FC<{ productId: string }> = ({ productId }) => {
     const [file, setFile] = useState<File | null>(null);

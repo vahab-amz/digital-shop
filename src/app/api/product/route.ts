@@ -1,8 +1,7 @@
 // handle REST API routes GET, POST, ...
 
-import { prisma } from "@/lib/prisma";
-import { NextRequest, NextResponse } from "next/server";
-
+import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest, res: NextResponse) {
     // console.log(req)
@@ -10,6 +9,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
         include: { images: true },
     });
     return NextResponse.json({
-        data: result
-    })
+        data: result,
+    });
 }

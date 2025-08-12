@@ -15,7 +15,7 @@ function ProductDetail(product: ProductsWithImages) {
     return (
         <Card className="w-[600px]">
             <div className="w-[40%] h-full">
-                <CardHeader className='flex flex-col h-full'>
+                <CardHeader className="flex flex-col h-full">
                     <CardTitle>
                         <h1 className="text-xl">{product?.name}</h1>
                     </CardTitle>

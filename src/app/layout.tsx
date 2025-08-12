@@ -49,7 +49,8 @@ export default function RootLayout({
                         </div>
                     </header>
                     <div className="mt-8 flex justify-center">{children}</div>
-                    <div className="flex justify-center my-10">{ads}</div> {/* slot */}
+                    <div className="flex justify-center my-10">{ads}</div>{' '}
+                    {/* slot */}
                     <footer className="flex justify-center items-center py-3 text-slate-300">
                         <p>&copy; 2025 All right reserved.</p>
                     </footer>

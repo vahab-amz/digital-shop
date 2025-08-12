@@ -5,4 +5,4 @@ export * from './table';
 export * from './input';
 export * from './select';
 export * from './label';
-export * from './textarea'
+export * from './textarea';
