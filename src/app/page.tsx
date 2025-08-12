@@ -1,15 +1,15 @@
+import Banner from '@/components/banner';
+import Welcome from '@/components/Welcome';
+
 export default function Home() {
-  // console.log('test')
-
-  const render = () => {
-    const name: string = 'Vahab';
-    return <span>hi {name}</span>;
-  };
-
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <div>my first page</div>
-      {render()}
-    </div>
-  );
+    return (
+        <div className="grid grid-cols-12">
+            <div className="col-span-7 flex justify-start">
+                <Welcome />
+            </div>
+            <div className="col-span-5">
+                <Banner />
+            </div>
+        </div>
+    );
 }
