@@ -51,7 +51,7 @@ export default function RootLayout({
                                     strokeWidth="2.2"
                                     size="25"
                                     color="#ffffff"
-                                    className='cursor-pointer'
+                                    className="cursor-pointer"
                                 />
                             </div>
                         </header>

@@ -12,8 +12,8 @@ export default async function DashboardLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const user = await currentUser()
-    const isAdmin = user?.privateMetadata?.isAdmin
-    if(!isAdmin) redirect('/')
+    const user = await currentUser();
+    const isAdmin = user?.privateMetadata?.isAdmin;
+    if (!isAdmin) redirect('/');
     return <div className="w-full">{children}</div>;
 }

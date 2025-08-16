@@ -1,20 +1,19 @@
-'use client'
-import { UserButton } from "@clerk/nextjs";
-import { LayoutDashboard } from 'lucide-react'
- 
+'use client';
+import { UserButton } from '@clerk/nextjs';
+import { LayoutDashboard } from 'lucide-react';
 
-const AdminMenu = ()=>{
-    return(
+const AdminMenu = () => {
+    return (
         <UserButton>
             <UserButton.MenuItems>
-                <UserButton.Link 
+                <UserButton.Link
                     label="Dashboard"
-                    labelIcon = {<LayoutDashboard size='sm' />}
+                    labelIcon={<LayoutDashboard size="sm" />}
                     href="/dashboard/products"
                 />
             </UserButton.MenuItems>
         </UserButton>
-    )
-}
+    );
+};
 
 export default AdminMenu;

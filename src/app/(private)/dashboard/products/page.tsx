@@ -6,7 +6,7 @@ import React from 'react';
 // export const dynamic = 'force-dynamic';
 
 // ya ham mitonim modele ISR render konim dade hamono (age yadet bshe ye chizi bod beyne SSR va SSG) va az revalidate estfede konim, ke dade hamon ye time cache shode bashe va bade ye modat dobare dade ha fetch beshan (in model, noe route maro avaz nemikone yani hamon static baghi mimanad)
-export const revalidate = 30
+export const revalidate = 30;
 
 function DashboardProductPage() {
     return (

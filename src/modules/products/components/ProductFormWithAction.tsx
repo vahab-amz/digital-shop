@@ -14,7 +14,7 @@ import {
     Input,
     Label,
     Textarea,
-    Button,  
+    Button,
 } from '@/components/ui';
 import Link from 'next/link';
 import UploadImage from './UploadImage';
@@ -50,9 +50,9 @@ function ProductForm(props: { product: Product | null }) {
     };
 
     useEffect(() => {
-        if(!isSubmit) return
-        if(error) toast.error("Failed")
-            else if(data) toast.error("Success")
+        if (!isSubmit) return;
+        if (error) toast.error('Failed');
+        else if (data) toast.error('Success');
     }, [state]);
 
     return (
