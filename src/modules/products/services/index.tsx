@@ -2,6 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import { Product } from '@prisma/client';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 // x
@@ -22,7 +23,7 @@ export const getProductsAPI = async () => {
 
 export const getProductById = async (id: string) => {
     // throw new Error("some error from server please try again") // errore dasti baraye didane safe error.tsx
-    await new Promise((resolve) => setTimeout(resolve, 4000)); // delay 4 sanie
+    // await new Promise((resolve) => setTimeout(resolve, 4000)); // delay 4 sanie
     const result = await prisma.product.findUnique({
         where: { id: id }, //injori ham mishe nevesht ==>  where: { id },
         include: { images: true },
@@ -49,6 +50,8 @@ export const upsertProduct = async (product: Product) => {
             data: product,
         });
     }
+
+    revalidatePath('/dashboard/products')
 
     return result;
 };

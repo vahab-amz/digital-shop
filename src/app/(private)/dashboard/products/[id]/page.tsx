@@ -8,8 +8,7 @@ async function page({ params }: { params: Promise<{ id: string }> }) {
 
     return (
         <div>
-            some other component
-            {/* suspens harajai nemishe estefade kard va hatman dakhelesh baraye ye amaliate async, await ra anjam dade bashe betore sade yni hatman bayad dakhelesh await bashe pas yani aga dakhele component ProductDetailView ma baraye component ProductForm mikhastim suspense estefade konim yani be in sorat : 
+            {/* suspens harajai nemishe estefade kard va hatman dakhelesh baraye ye amaliate async, await ra anjam dade bashe betore sade yni hatman bayad dakhelesh await bashe pas yani aga dakhele component ProductDetailView ma baraye component ProductForm mikhastim suspense estefade konim yani be in sorat :  
 			<Suspense fallback={<Spinner />}>
 			   <ProductForm product={product} />
 			</Suspense> 
