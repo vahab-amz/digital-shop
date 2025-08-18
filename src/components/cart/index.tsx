@@ -12,7 +12,6 @@ import { useCart } from '@/hooks/useCart';
 import { CartWithProduct } from '@/app/types';
 
 function CartDropdown() {
-
     const { cart, isLoading, error, removeCartItemMutation } = useCart();
 
     return (
@@ -63,7 +62,7 @@ function CartDropdown() {
                                     onClick={() =>
                                         //removeCartItemMutation yek function mamoli nistesh ke beshe callesh kard va bayad mutatesh kard baraye hamin bayad behesh ye mutate ezafe kard va sepas raftare functioni dasht bahash
                                         removeCartItemMutation.mutate(
-                                            item.product.id
+                                            item.product.id,
                                         )
                                     }
                                 >

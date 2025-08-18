@@ -1,7 +1,6 @@
 import { Prisma } from '@prisma/client';
 
-
-// talfiq kardane 2 no tip dade 
+// talfiq kardane 2 no tip dade
 
 // product ba image
 export type ProductsWithImages = Prisma.ProductGetPayload<{
@@ -10,5 +9,5 @@ export type ProductsWithImages = Prisma.ProductGetPayload<{
 
 // cart ba product
 export type CartWithProduct = Prisma.CartItemGetPayload<{
-    include: { product: true, images:true };
+    include: { product: true; images: true };
 }>;
