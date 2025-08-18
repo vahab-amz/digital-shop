@@ -6,6 +6,8 @@ import { Toaster } from '@/components/ui';
 import Link from 'next/link';
 import { ClerkProvider } from '@clerk/nextjs';
 import Auth from '@/components/auth';
+import ReactQueryProvider from '@/provider/ReactQuery';
+import CartDropdown from '@/components/cart';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -32,41 +34,43 @@ export default function RootLayout({
     return (
         // providere Clerk
         <ClerkProvider>
-            <html lang="en">
-                <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased
-            bg-slate-800`}
-                >
-                    <main className="w-full min-h-screen max-w-[1400px] mx-auto px-20 flex flex-col justify-between">
-                        <header className="h-20 w-full flex justify-between">
-                            <div className="flex items-center gap-2">
-                                <MonitorSmartphone color="#ffffff" />
-                                <Link href="/" className="text-white text-2xl">
-                                    Digital Shop
-                                </Link>
+            <ReactQueryProvider>
+                <html lang="en">
+                    <body
+                        className={`${geistSans.variable} ${geistMono.variable} antialiased
+                bg-slate-800`}
+                    >
+                        <main className="w-full min-h-screen max-w-[1400px] mx-auto px-20 flex flex-col justify-between">
+                            <header className="h-20 w-full flex justify-between">
+                                <div className="flex items-center gap-2">
+                                    <MonitorSmartphone color="#ffffff" />
+                                    <Link
+                                        href="/"
+                                        className="text-white text-2xl"
+                                    >
+                                        Digital Shop
+                                    </Link>
+                                </div>
+                                <div className="flex gap-2 items-center">
+                                    <Auth />
+                                    <CartDropdown />
+                                </div>
+                            </header>
+                            <div className="mt-8 flex justify-center">
+                                {children}
+                                <Toaster />
                             </div>
-                            <div className="flex gap-2 items-center">
-                                <Auth />
-                                <ShoppingCart
-                                    strokeWidth="2.2"
-                                    size="25"
-                                    color="#ffffff"
-                                    className="cursor-pointer"
-                                />
+                            <div className="flex justify-center my-10">
+                                {ads}
                             </div>
-                        </header>
-                        <div className="mt-8 flex justify-center">
-                            {children}
-                            <Toaster />
-                        </div>
-                        <div className="flex justify-center my-10">{ads}</div>
-                        {/* slot */}
-                        <footer className="flex justify-center items-center py-3 text-slate-300">
-                            <p>&copy; 2025 All right reserved.</p>
-                        </footer>
-                    </main>
-                </body>
-            </html>
+                            {/* slot */}
+                            <footer className="flex justify-center items-center py-3 text-slate-300">
+                                <p>&copy; 2025 All right reserved.</p>
+                            </footer>
+                        </main>
+                    </body>
+                </html>
+            </ReactQueryProvider>
         </ClerkProvider>
     );
 }

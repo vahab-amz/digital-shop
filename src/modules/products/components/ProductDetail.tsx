@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import {
     Button,
@@ -10,8 +11,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
 import { ProductsWithImages } from '@/app/types';
+import { useCart } from '@/hooks/useCart';
 
 function ProductDetail(product: ProductsWithImages) {
+    const {addToCartMutiation} = useCart()
     return (
         <Card className="w-[600px]">
             <div className="w-[40%] h-full">
@@ -55,7 +58,13 @@ function ProductDetail(product: ProductsWithImages) {
                         </p>
                     </div>
                     <div className="flex flex-col space-y-1 w-full">
-                        <Button className="cursor-pointer">
+                        <Button className="cursor-pointer"
+                        onClick={()=>{
+                            //addToCartMutiation yek function mamoli nistesh ke beshe callesh kard va bayad mutatesh kard baraye hamin bayad behesh ye mutate ezafe kard va sepas raftare functioni dasht bahash
+                            addToCartMutiation.mutate(product.id)
+                        }}
+                        >
+                            Add to cart
                             <ShoppingCart color="white" />
                         </Button>
                         <Button variant="outline" asChild>

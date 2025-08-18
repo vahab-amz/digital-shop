@@ -22,24 +22,32 @@ enum ProductCategory {
   WATCH
   OTHERS
 }
-model Product{
-  id String @id @default(uuid()) 
-  name String 
-  category ProductCategory
+
+model Product {
+  id          String          @id @default(uuid())
+  name        String
+  category    ProductCategory
   description String?
-  price Float? @default(0.0)
-  quantity Int? @default(0)
-  images Image[]
+  price       Float?          @default(0.0)
+  quantity    Int?            @default(0)
+  images      Image[]
+  card CartItem[]
 }
 
 model Image {
-  id String @id @default(uuid())
-  image String
-  product Product? @relation(fields: [productId], references: [id])
+  id        String   @id @default(uuid())
+  image     String
   productId String?
+  product   Product? @relation(fields: [productId], references: [id])
+}
+
+model CartItem {
+  id Int @id @default(autoincrement())
+  userId String
+  productId String
+  quantity Int
+  product Product @relation(fields: [productId], references: [id])
 }
 
 // 1- generate
 // 2- migrate (push)
-
-
