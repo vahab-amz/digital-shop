@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { MonitorSmartphone, ShoppingCart } from 'lucide-react';
+import { MonitorSmartphone } from 'lucide-react';
 import { Toaster } from '@/components/ui';
 import Link from 'next/link';
 import { ClerkProvider } from '@clerk/nextjs';

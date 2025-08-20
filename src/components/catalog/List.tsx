@@ -10,14 +10,14 @@ import Spinner from '../Spinner';
 
 function List() {
     const params = useSearchParams();
-    const productId : string | null = params.get('id');
+    const productId: string | null = params.get('id');
 
     const [images, setImages] = useState<PrismaType.Image[] | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getImages = async () => {
-            if (!productId) return; 
+            if (!productId) return;
             const data = await FetchImages(productId);
             setImages(data?.images);
             setLoading(false);
@@ -29,9 +29,7 @@ function List() {
     // const images = DATA[0].images;
     return (
         <div className="flex flex-wrap justify-center gap-3 ">
-            {
-                loading && <Spinner />
-            }
+            {loading && <Spinner />}
             {images &&
                 images.map((img, index) => (
                     <div key={index}>

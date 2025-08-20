@@ -49,11 +49,11 @@ export const useCart = () => {
             //in bakh male zamanie ke item dakhele cart ba movafaghiat add shode va niaz dare dare ke ghestame fetch kardane dadaro yek invalidate ya update bokone bedone refresh kardane page va dakhele invalidateQueries ba on queryKey ke enekhab kardim migim kodom useQuery ra invalidate kone
             queryClient.invalidateQueries({ queryKey: ['cart'] });
             // console.log("Item is added")
-            toast.success("Item is added")
+            toast.success('Item is added');
         },
         onError: () => {
             // console.log('Failed to add')
-            toast.error("Failed to add. Please make sure you are logged in")
+            toast.error('Failed to add. Please make sure you are logged in');
         },
     });
 
@@ -75,11 +75,11 @@ export const useCart = () => {
             //in bakh male zamanie ke item dakhele cart ba movafaghiat add shode va niaz dare dare ke ghestame fetch kardane dadaro yek invalidate ya update bokone bedone refresh kardane page va dakhele invalidateQueries ba on queryKey ke enekhab kardim migim kodom useQuery ra invalidate kone
             queryClient.invalidateQueries({ queryKey: ['cart'] });
             // console.log('item deleted');
-            toast.success("Item deleted")
+            toast.success('Item deleted');
         },
         onError: () => {
             // console.log('failed to delete')
-            toast.error('failed to delete')
+            toast.error('failed to delete');
         },
     });
 

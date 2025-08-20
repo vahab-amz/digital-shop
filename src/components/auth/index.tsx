@@ -21,9 +21,7 @@ async function Auth() {
 
                     {/* inja omadam shakhsi sazi kardm on buttono */}
                     <SignInButton mode="modal">
-                        <Button variant="secondary">
-                            Sing in
-                        </Button>
+                        <Button variant="secondary">Sing in</Button>
                     </SignInButton>
                 </div>
             </SignedOut>

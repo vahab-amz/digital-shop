@@ -10,7 +10,7 @@ export async function generateMetadata({
     params: Promise<{ id: string }>;
 }) {
     const data = await params;
-    const { id } = data; 
+    const { id } = data;
     const product = (await getProductById(id)) as ProductsWithImages;
     if (!product) {
         return customMetaDataGenerator({
@@ -20,7 +20,7 @@ export async function generateMetadata({
     return customMetaDataGenerator({
         title: product?.name,
         description: product?.description,
-        images: product.images
+        images: product.images,
     });
 }
 

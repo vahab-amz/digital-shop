@@ -27,7 +27,7 @@ function ProductTable(props: {
     };
 
     return (
-        <div className='w-full min-w-[700px] overflow-x-auto'>
+        <div className="w-full min-w-[700px] overflow-x-auto">
             <div className="text-4xl text-white font-semibold mb-10 flex justify-between">
                 <h1>Products</h1>
                 <Button asChild>

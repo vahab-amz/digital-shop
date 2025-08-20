@@ -41,7 +41,7 @@ function ProductForm(props: { product: Product | null }) {
         data: product ?? null,
         error: null,
     });
-    
+
     const { error, data } = state;
     const [isSubmit, setIsSubmit] = useState(false);
 

@@ -8,13 +8,13 @@ import Loading from '@/components/Loading';
 
 function ProductListView() {
     const [products, setProducts] = useState<ProductsWithImages[]>([]);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
 
     const getProductData = async () => {
-        setLoading(true)
+        setLoading(true);
         const result = await getProductsAPI();
         setProducts(result?.data);
-        setLoading(false)
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -22,11 +22,7 @@ function ProductListView() {
     }, []);
 
     return (
-        <div>
-            {loading ? <Loading /> : (
-                <ProductList product={products} />
-            )}
-        </div>
+        <div>{loading ? <Loading /> : <ProductList product={products} />}</div>
     );
 }
 
