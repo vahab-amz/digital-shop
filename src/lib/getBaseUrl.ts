@@ -5,9 +5,9 @@ export default function getBaseUrl() {
         return '';
     }
 
-    if (process.env.VERCEL_URL) {
+    if (process.env.NEXT_PUBLIC_BASE_URL) {
         // Deployed on Vercel
-        return `https://${process.env.VERCEL_URL}`;
+        return `https://${process.env.NEXT_PUBLIC_BASE_URL}`;
     }
 
     // Local development
