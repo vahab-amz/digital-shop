@@ -41,6 +41,7 @@ function ProductForm(props: { product: Product | null }) {
         data: product ?? null,
         error: null,
     });
+    
     const { error, data } = state;
     const [isSubmit, setIsSubmit] = useState(false);
 
@@ -52,13 +53,13 @@ function ProductForm(props: { product: Product | null }) {
     useEffect(() => {
         if (!isSubmit) return;
         if (error) toast.error('Failed');
-        else if (data) toast.error('Success');
+        else if (data) toast.success('Success');
     }, [state]);
 
     return (
         <div className="flex justify-center">
             <form
-                className="w-full max-w-[30%] text-white"
+                className="w-full  md:max-w-[30%] text-white"
                 action={handleSubmit}
             >
                 <input type="hidden" name="id" value={product?.id || ''} />

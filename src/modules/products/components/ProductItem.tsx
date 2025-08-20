@@ -36,10 +36,10 @@ function ProductItem(props: { product: any }) {
                         ${product?.price}
                     </span>
                     <div className="flex gap-2 items-center">
-                        <Heart color="red" className="cursor-pointer" />
+                        {/* <Heart color="red" className="cursor-pointer" /> */}
                         <Link
                             href={`/products/catalog?id=${product?.id}`}
-                            className=""
+                            className="hover:text-blue-800 transition-colors duration-150"
                         >
                             <GalleryThumbnails />
                         </Link>

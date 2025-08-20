@@ -1,6 +1,7 @@
 'use client';
 
 import { useQueryClient, useQuery, useMutation } from '@tanstack/react-query';
+import { toast } from 'sonner';
 
 export const useCart = () => {
     // nokte: request haye ma ke az reactQuery estefade mikonim ya query hastan ya mutation. 1_ onai ke marbot be GET kardan mishan, mishe query 2_ va onai ke marbot mishan be dastkari kardane yek dade mishan mutation mesle DELETE EDIT ADD
@@ -47,10 +48,12 @@ export const useCart = () => {
         onSuccess: () => {
             //in bakh male zamanie ke item dakhele cart ba movafaghiat add shode va niaz dare dare ke ghestame fetch kardane dadaro yek invalidate ya update bokone bedone refresh kardane page va dakhele invalidateQueries ba on queryKey ke enekhab kardim migim kodom useQuery ra invalidate kone
             queryClient.invalidateQueries({ queryKey: ['cart'] });
-            alert('item is added');
+            // console.log("Item is added")
+            toast.success("Item is added")
         },
         onError: () => {
-            alert('failed to add');
+            // console.log('Failed to add')
+            toast.error("Failed to add. Please make sure you are logged in")
         },
     });
 
@@ -71,10 +74,12 @@ export const useCart = () => {
         onSuccess: () => {
             //in bakh male zamanie ke item dakhele cart ba movafaghiat add shode va niaz dare dare ke ghestame fetch kardane dadaro yek invalidate ya update bokone bedone refresh kardane page va dakhele invalidateQueries ba on queryKey ke enekhab kardim migim kodom useQuery ra invalidate kone
             queryClient.invalidateQueries({ queryKey: ['cart'] });
-            alert('item deleted');
+            // console.log('item deleted');
+            toast.success("Item deleted")
         },
         onError: () => {
-            alert('failed to delete');
+            // console.log('failed to delete')
+            toast.error('failed to delete')
         },
     });
 

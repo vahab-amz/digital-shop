@@ -19,7 +19,7 @@ import IMG5 from './images/digi-image-5.jpg';
 
 function Banner() {
     return (
-        <Carousel className="w-full">
+        <Carousel className="w-[70%] md:w-full mx-auto">
             <CarouselContent>
                 {[IMG1, IMG2, IMG3, IMG4, IMG5].map((image, index) => (
                     <CarouselItem key={index}>

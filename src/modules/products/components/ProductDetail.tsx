@@ -16,8 +16,8 @@ import { useCart } from '@/hooks/useCart';
 function ProductDetail(product: ProductsWithImages) {
     const { addToCartMutiation } = useCart();
     return (
-        <Card className="w-[600px]">
-            <div className="w-[40%] h-full">
+        <Card className="w-[600px] flex-col md:flex-row">
+            <div className="w-[90%] mx-auto md:w-[40%] md:mx-0 h-full">
                 <CardHeader className="flex flex-col h-full">
                     <CardTitle>
                         <h1 className="text-xl">{product?.name}</h1>

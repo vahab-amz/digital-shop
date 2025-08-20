@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { Product } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-
+import getBaseUrl from '@/lib/getBaseUrl';
 // x
 export const getProducts = async () => {
     const result = await prisma.product.findMany({
@@ -16,7 +16,7 @@ export const getProducts = async () => {
 
 // xx
 export const getProductsAPI = async () => {
-    const result = await fetch('http://localhost:3000/api/product');
+    const result = await fetch(`${getBaseUrl()}/api/product`);
     const responde = await result.json();
     return responde;
 };

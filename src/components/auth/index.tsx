@@ -3,10 +3,11 @@
 import { currentUser } from '@clerk/nextjs/server';
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import AdminMenu from './AdminMenu';
+import { Button } from '../ui';
 
 async function Auth() {
     const user = await currentUser(); //in tabe miad curretn usere mano mide
-    console.log(user);
+    // console.log(user);
     const isAdmin = user?.privateMetadata?.isAdmin;
 
     return (
@@ -15,7 +16,15 @@ async function Auth() {
             <SignedIn>{isAdmin ? <AdminMenu /> : <UserButton />}</SignedIn>
             <SignedOut>
                 <div className="text-white">
-                    <SignInButton />
+                    {/* halate default button signin az Clerc */}
+                    {/* <SignInButton /> */}
+
+                    {/* inja omadam shakhsi sazi kardm on buttono */}
+                    <SignInButton mode="modal">
+                        <Button variant="secondary">
+                            Sing in
+                        </Button>
+                    </SignInButton>
                 </div>
             </SignedOut>
         </div>

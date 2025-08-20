@@ -11,7 +11,8 @@ const validationUpsertProduct = (data: Record<string, any>) => {
         description: z.string(),
         price: z
             .float32({ message: 'price must be float' })
-            .min(1, { message: 'price must be at least 1' }),
+            .min(1, { message: 'price must be at least 1' })
+        ,
         quantity: z
             .number({ message: 'quantity must be number' })
             .min(1, { message: 'quantity must be at least 1' })
