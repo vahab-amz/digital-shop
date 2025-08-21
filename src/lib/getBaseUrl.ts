@@ -5,11 +5,16 @@ export default function getBaseUrl() {
         return '';
     }
 
-    if (process.env.VERCEL_URL) {
-        // Deployed on Vercel
-        return `https://${process.env.VERCEL_URL}`;
+    // If we're in development (localhost)
+    if (process.env.NODE_ENV === 'development') {
+        return 'http://localhost:3000';
     }
 
-    // Local development
+    // If we're in production (e.g., Vercel)
+    if (process.env.VERCEL_URL) {
+        return `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, '')}`;
+    }
+
+    // Fallback just in case
     return 'http://localhost:3000';
 }

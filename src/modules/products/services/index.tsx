@@ -16,9 +16,16 @@ export const getProducts = async () => {
 
 // xx
 export const getProductsAPI = async () => {
-    const result = await fetch(`${getBaseUrl()}/api/product`, {
+    const url = `${getBaseUrl()}/api/product`;
+    console.log("url ==>" + url)
+    const result = await fetch(url, {
         cache: 'no-store',
     });
+    if (!result.ok) {
+        const errorText = await result.text();
+        console.error('API error:', errorText);
+        throw new Error('Failed to fetch products');
+    }
     const responde = await result.json();
     return responde;
 };
