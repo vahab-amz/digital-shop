@@ -17,29 +17,21 @@ export const getProducts = async () => {
 // xx
 export const getProductsAPI = async () => {
     try {
-        console.log('🚀 First log on');
-
         const url = `${getBaseUrl()}/api/product`;
-        console.log('🌐 URL =>', url);
-
         const result = await fetch(url, {
             cache: 'no-store',
             next: { revalidate: 30 },
         });
 
         if (!result.ok) {
-            const errorText = await result.text();
-            console.error('❌ API responded with error:', errorText);
             throw new Error(
                 `Fetch failed: ${result.status} ${result.statusText}`,
             );
         }
 
         const response = await result.json();
-        console.log('✅ Products fetched successfully');
         return response;
     } catch (error) {
-        console.error('🔥 Error in getProductsAPI:', error);
         throw error instanceof Error
             ? error
             : new Error('Unexpected error occurred');

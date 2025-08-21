@@ -74,7 +74,6 @@ export const upsertProduct = async (
     }
 
     try {
-        console.log('[POST] درحال ارسال داده به سرور...', productData);
         let result;
         if (id) {
             result = await prisma.product.update({
@@ -90,10 +89,8 @@ export const upsertProduct = async (
         }
 
         revalidatePath('/dashboard/products');
-        console.log('[POST] پاسخ دریافت شد:', result);
         return { data: result, error: null };
     } catch (e) {
-        console.error('[POST-ERROR] خطا هنگام ارسال:', error);
         return { data: productData, error: { general: 'Upsert failed' } };
     }
 };
