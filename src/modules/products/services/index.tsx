@@ -24,7 +24,7 @@ export const getProductsAPI = async () => {
 
         const result = await fetch(url, {
             cache: 'no-store',
-            next: { revalidate: 30 }
+            next: { revalidate: 30 },
         });
 
         if (!result.ok) {
