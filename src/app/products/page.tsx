@@ -6,7 +6,7 @@ import React from 'react';
 async function Products() {
     // const data: PrismaType.Product[] = await prisma.product.findMany()
     // console.log(data)
-    
+
     return (
         <div>
             <ProductListView />
