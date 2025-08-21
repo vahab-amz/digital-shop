@@ -16,6 +16,7 @@ export const getProducts = async () => {
 
 // xx
 export const getProductsAPI = async () => {
+    console.log('first log on');
     const url = `${getBaseUrl()}/api/product`;
     console.log('url ==>' + url);
     const result = await fetch(url, {

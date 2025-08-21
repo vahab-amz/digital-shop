@@ -1,5 +1,6 @@
 // src/lib/getBaseUrl.ts
 export default function getBaseUrl() {
+    console.log("function for url")
     if (typeof window !== 'undefined') {
         // Running in the browser
         return '';
