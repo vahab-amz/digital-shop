@@ -12,13 +12,16 @@ function ProductListView() {
 
     const getProductData = async () => {
         setLoading(true);
+        console.log("before fetch getProductsAPI")
         const result = await getProductsAPI();
+        console.log("after fetch getProductsAPI")
         setProducts(result?.data);
         setLoading(false);
     };
 
     useEffect(() => {
         getProductData();
+        console.log("[MOUNT] صفحه بارگذاری شد");
     }, []);
 
     return (
