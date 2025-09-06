@@ -57,16 +57,17 @@ A **modern e-commerce platform** built with **Next.js 15 + TypeScript**, providi
     DATABASE_URL="postgresql://user:password@localhost:5432/digital-shop"
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
     CLERK_SECRET_KEY=your_clerk_secret_key
+   
     NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
     NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
     NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
     NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
 
-4. Generate Prisma Client & run migrations:
+5. Generate Prisma Client & run migrations:
    npm run generate
    npm run migrate
 
-5. Start the development server:
+6. Start the development server:
    npm run dev
 
 ### Available Scripts
