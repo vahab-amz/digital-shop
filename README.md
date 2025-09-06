@@ -95,7 +95,9 @@ src/
 
 ## Screenshots
 
+Home page
 ![Home page](public/screenshots/home-page.png)
+List of products
 ![List of products](public/screenshots/products.png)
 ![Product details](public/screenshots/product-details.png)
 
