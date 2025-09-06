@@ -96,15 +96,24 @@ src/
 
 ## Screenshots
 
-Home page
+### Home Page
 ![Home page](public/screenshots/home-page.png)
-List of products
+
+### List of products
 ![List of products](public/screenshots/products.png)
+
+### Product details
 ![Product details](public/screenshots/product-details.png)
 
+### Admin panel
 ![Admin panel](public/screenshots/panel-admin-products.png)
+
+### update product
 ![update product](public/screenshots/update-product.png)
+
+### Add product
 ![Add product](public/screenshots/add-product.png)
+
 
 ## Contributing
 
